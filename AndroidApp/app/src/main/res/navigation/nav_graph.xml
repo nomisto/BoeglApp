@@ -3,26 +3,95 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/ToolsFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.boeglapp.FirstFragment"
+        android:id="@+id/ToolsFragment"
+        android:name="com.example.boeglapp.ToolFragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        tools:layout="@layout/fragment_tool">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_tools_to_history"
+            app:destination="@id/HistoryFragment" />
+        <action
+            android:id="@+id/action_Tools_to_ToolEditor"
+            app:destination="@id/ToolEditorFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.boeglapp.SecondFragment"
+        android:id="@+id/HistoryFragment"
+        android:name="com.example.boeglapp.HistoryFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        tools:layout="@layout/fragment_history">
 
+        <argument
+            android:name="id"
+            app:argType="integer" />
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_History_to_HistoryEditor"
+            app:destination="@id/HistoryEditorFragment" />
+        <argument
+            android:name="byTool"
+            app:argType="boolean" />
+        <argument
+            android:name="label"
+            app:argType="string" />
     </fragment>
+
+    <fragment
+        android:id="@+id/ToolEditorFragment"
+        android:name="com.example.boeglapp.ToolEditorFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_tool_editor">
+        <argument
+            android:name="update"
+            app:argType="boolean" />
+        <argument
+            android:name="toolid"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/HistoryEditorFragment"
+        android:name="com.example.boeglapp.HistoryEditorFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_history_editor">
+        <argument
+            android:name="update"
+            app:argType="boolean" />
+        <argument
+            android:name="historyid"
+            app:argType="integer" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <argument
+            android:name="isToolNotSite"
+            app:argType="boolean" />
+        <argument
+            android:name="label"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/siteFragment"
+        android:name="com.example.boeglapp.SiteFragment"
+        android:label="fragment_site"
+        tools:layout="@layout/fragment_site" >
+        <action
+            android:id="@+id/action_siteFragment_to_siteEditorFragment"
+            app:destination="@id/siteEditorFragment" />
+        <argument
+            android:name="update"
+            app:argType="boolean" />
+        <argument
+            android:name="siteid"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_siteFragment_to_HistoryFragment"
+            app:destination="@id/HistoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/siteEditorFragment"
+        android:name="com.example.boeglapp.SiteEditorFragment"
+        android:label="SiteEditorFragment" />
 </navigation>

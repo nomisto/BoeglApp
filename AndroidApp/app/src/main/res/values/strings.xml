@@ -1,11 +1,29 @@
 <resources>
     <string name="app_name">BoeglApp</string>
-    <string name="action_settings">Settings</string>
+    <string name="new_tool">Neues Werkzeug</string>
+    <string name="new_site">Neue Baustelle</string>
+
+    <string name="placeholder">Placeholder</string>
+    <string name="save">Speichern</string>
+
+    <string name="site">Baustelle</string>
+    <string name="sites">Baustellen</string>
+    <string name="tool">Werkzeug</string>
+    <string name="tools">Werkzeuge</string>
+    <string name="history">Verlauf</string>
+    <string name="histories">Verläufe</string>
+    <string name="employee">Mitarbeiter</string>
+
+    <string name="new_entry">Neuer Eintrag für:</string>
+
+
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+
+
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>

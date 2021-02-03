@@ -1,0 +1,22 @@
+CREATE TABLE IF NOT EXISTS Tools(
+                 ID INTEGER PRIMARY KEY AUTO_INCREMENT,
+                 NAME TEXT NOT NULL
+                 );
+
+CREATE TABLE IF NOT EXISTS Sites(
+                 ID INTEGER PRIMARY KEY AUTO_INCREMENT,
+                 NAME TEXT NOT NULL
+                 );
+
+CREATE TABLE IF NOT EXISTS History(
+                    ID INTEGER PRIMARY KEY AUTO_INCREMENT,
+                    TOOL_ID INTEGER NOT NULL,
+					SITE_ID INTEGER NOT NULL,
+                    EMPLOYEE TEXT NOT NULL,
+                    FROM_DATE INTEGER NOT NULL,
+                    TO_DATE INTEGER NOT NULL,
+                    FOREIGN KEY (TOOL_ID) REFERENCES Tools(ID) ON DELETE CASCADE,
+					FOREIGN KEY (SITE_ID) REFERENCES Sites(ID) ON DELETE CASCADE
+                );
+				
+INSERT INTO History (TOOL_ID, SITE_ID, EMPLOYEE, FROM_DATE, TO_DATE) VALUES ()
